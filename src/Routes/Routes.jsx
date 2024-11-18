@@ -5,6 +5,8 @@ import DonateCamp from "../Pages/DonateCamp";
 import HowToHelp from "../Pages/HowToHelp";
 import LogIn from "../Pages/LogIn";
 import Dashboard from "../Pages/Dashboard";
+import SingIn from "../Pages/SingIn";
+import Register from "../Pages/Register";
 
 
 export const routes = createBrowserRouter([
@@ -18,7 +20,8 @@ export const routes = createBrowserRouter([
             },
             {
                 path :'DonateCamp',
-                element :<DonateCamp/>
+                element :<DonateCamp/>,
+                loader :()=> fetch('data.json')
             },
             {
                 path :'HowToHelp',
@@ -30,7 +33,17 @@ export const routes = createBrowserRouter([
             },
             {
                 path :'LogIn',
-                element :<LogIn/>
+                element :<LogIn/>,
+                children :[
+                    {
+                        path :'/LogIn',
+                        element :<SingIn/>
+                    },
+                    {
+                        path :'/LogIn/Register',
+                        element :<Register/>
+                    },
+                ]
             }
         ]
     }

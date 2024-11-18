@@ -31,13 +31,13 @@ const AboutUs = () => {
       </div>
         {/*how to contribute  banner */}
         <div className='w-full h-96 bg-[#007aff] rounded-xl flex items-center justify-center my-6'>
-        <h3 className='text-4xl font-bold text-white'>How You Can Contribute</h3>
+        <h3 className='text-4xl font-bold text-white text-center'>How You Can Contribute</h3>
       </div>
       <div className='my-6 flex flex-col gap-5'>
         {/* donation */}
       <div className='my-3 flex items-center flex-col justify-center gap-3'>
             <BiDonateHeart size={50} className='text-[#007aff]'/>
-            <h3 className='text-3xl font-medium text-[#007aff]'>Donation</h3>
+            <h3 className='text-3xl font-medium text-[#007aff] text-center'>Donation</h3>
             <p className='text-xl font-medium text-center'>Donating clothes is a simple yet powerful way to support those in need. It helps provide essential clothing to individuals and families facing hardships, offering them warmth, dignity, and a sense of care. Clothing donations can benefit people in local communities, shelters, and across the globe, especially during challenging times such as winter or in the wake of disasters. By donating gently used clothes, you contribute to reducing waste, promoting sustainability, and supporting those who may not have the means to buy new garments. Every donation, big or small, makes a significant impact on improving someone's life.</p>
       </div>
       {/* how to Donate */}
@@ -45,13 +45,13 @@ const AboutUs = () => {
         {/* contribute-container */}
         <div className='flex flex-col  justify-center items-center gap-3'>
             < TbClockHour7Filled  size={50} className='text-[#007aff]'/>
-            <h3 className='text-5xl  text-[#007aff]'>Volunteer Your Time</h3>
+            <h3 className='text-5xl  text-[#007aff] text-center'>Volunteer Your Time</h3>
             <p className='text-xl font-medium text-center w-2/3'>
             Volunteering your time helps create a stronger community by supporting those in need, offering your skills and compassion. It’s a rewarding way to make a positive impact and promote meaningful change</p>
         </div>
         <div className='flex flex-col justify-center items-center gap-3'>
             <TbBinaryTree2  size={50} className='text-[#007aff]'/>
-            <h3 className='text-5xl  text-[#007aff]'>Raise Awareness</h3>
+            <h3 className='text-5xl  text-[#007aff] text-center'>Raise Awareness</h3>
             <p className='text-xl font-medium text-center w-2/3'>
             Raising awareness helps inform and educate communities about critical issues, inspiring collective action and support. It amplifies voices, spreads important messages, and encourages more people to get involved in making a difference</p>
         </div>

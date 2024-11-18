@@ -1,0 +1,111 @@
+[
+    {
+      "id": 1,
+      "title": "Warm Hearts Dhaka",
+      "image": "https://i.ibb.co/7W5VxCH/card1.jpg",
+      "description": "Donate winter clothes to help underprivileged families stay warm in Dhaka during the harsh winter.",
+      "status": "Active",
+      "contactInfo": "dhaka@winterclothes.org",
+      "division": "Dhaka"
+    },
+    {
+      "id": 2,
+      "title": "Sylhet Winter Aid",
+      "image": "https://i.ibb.co/HKKyPLC/card5.jpg",
+      "description": "Join our mission to provide warm clothing for the needy in the cold Sylhet winters.",
+      "status": "Active",
+      "contactInfo": "sylhet@winterclothes.org",
+      "division": "Sylhet"
+    },
+    {
+      "id": 3,
+      "title": "Chittagong Blanket Drive",
+      "image": "https://i.ibb.co/WpdHtWq/card3.jpg",
+      "description": "Help us distribute blankets and warm clothes to impoverished families in Chittagong.",
+      "status": "Active",
+      "contactInfo": "chittagong@winterclothes.org",
+      "division": "Chittagong"
+    },
+    {
+      "id": 4,
+      "title": "Khulna Warmth Campaign",
+      "image": "https://i.ibb.co/PzH2fvf/card6.webp",
+      "description": "Provide winter essentials to those in need in the Khulna region this winter.",
+      "status": "Completed",
+      "contactInfo": "khulna@winterclothes.org",
+      "division": "Khulna"
+    },
+    {
+      "id": 5,
+      "title": "Winter Relief Dhaka",
+      "image": "https://i.ibb.co/d5cd5hz/card2.jpg",
+      "description": "Support our drive to collect coats and sweaters for Dhaka's homeless population.",
+      "status": "Active",
+      "contactInfo": "relief@winterclothes.org",
+      "division": "Dhaka"
+    },
+    {
+      "id": 6,
+      "title": "Sylhet Cozy Clothing",
+      "image": "https://i.ibb.co/PMzz031/card4.jpg",
+      "description": "Ensure warmth for children and elderly in Sylhet by donating winter garments.",
+      "status": "Active",
+      "contactInfo": "sylhetcozy@winterclothes.org",
+      "division": "Sylhet"
+    },
+    {
+      "id": 7,
+      "title": "Chittagong Warm Souls",
+      "image": "https://i.ibb.co/LZXS0HV/card7.jpg",
+      "description": "Your donation of jackets and shawls can bring warmth to struggling families in Chittagong.",
+      "status": "Active",
+      "contactInfo": "warmchittagong@winterclothes.org",
+      "division": "Chittagong"
+    },
+    {
+      "id": 8,
+      "title": "Khulna Blanket Support",
+      "image": "https://i.ibb.co/DQN4zwG/card8.jpg",
+      "description": "Join hands to deliver blankets and warm outfits to the most vulnerable in Khulna.",
+      "status": "Completed",
+      "contactInfo": "blanketkhulna@winterclothes.org",
+      "division": "Khulna"
+    },
+    {
+      "id": 9,
+      "title": "Dhaka Kids Winter Drive",
+      "image": "https://i.ibb.co/MRPL04w/card9.jpg",
+      "description": "Help kids in Dhaka brave the cold with warm sweaters and mittens.",
+      "status": "Active",
+      "contactInfo": "kidsdhaka@winterclothes.org",
+      "division": "Dhaka"
+    },
+    {
+      "id": 10,
+      "title": "Sylhet Warm Hands",
+      "image": "https://i.ibb.co/SyynFZc/card10.jpg",
+      "description": "Distribute gloves and scarves to keep hands and necks warm in Sylhet.",
+      "status": "Active",
+      "contactInfo": "warmsylhet@winterclothes.org",
+      "division": "Sylhet"
+    },
+    {
+      "id": 11,
+      "title": "Chittagong Winter Shelter",
+      "image": "https://i.ibb.co/qMz82tL/card10.jpg",
+      "description": "Provide warm bedding and clothes to families in Chittagong facing extreme cold.",
+      "status": "Active",
+      "contactInfo": "shelterchittagong@winterclothes.org",
+      "division": "Chittagong"
+    },
+    {
+      "id": 12,
+      "title": "Khulna Winter Essentials",
+      "image": "https://i.ibb.co/C0P7GC2/card11.jpg",
+      "description": "Donate winter essentials to Khulna's elderly and children to combat the cold.",
+      "status": "Active",
+      "contactInfo": "essentials@winterclothes.org",
+      "division": "Khulna"
+    }
+  ]
+  

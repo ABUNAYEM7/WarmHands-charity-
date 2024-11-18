@@ -20,7 +20,7 @@ const Banner = () => {
         <SwiperSlide>
           <div className="slide-content h-[550px] flex justify-center items-center relative">
             <img className="w-full h-full rounded-xl" src={slide1} alt="Slide 1" />
-            <h3 className="absolute top-10 inset-x-0 text-center text-3xl font-bold text-[#007aff]">
+            <h3 className="absolute top-10 inset-x-0 text-center text-3xl font-bold text-[#901111] ">
               <TypeAnimation
                 sequence={[
                   'Warm Hands, Warmer Hearts.', 2000,
@@ -54,7 +54,7 @@ const Banner = () => {
         <SwiperSlide>
           <div className="slide-content h-[550px] flex justify-center items-center relative">
             <img className="w-full h-full rounded-xl" src={slide3} alt="Slide 3" />
-            <h3 className="absolute top-10 inset-x-0 text-center text-3xl font-bold text-[#007aff]">
+            <h3 className="absolute top-10 inset-x-0 text-center text-3xl font-bold text-[#901111] ">
               <TypeAnimation
                 sequence={[
                   'Donate Warmth, Change Lives', 2000,
