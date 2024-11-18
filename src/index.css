@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.swiper-button-next,
+.swiper-button-prev {
+  top: 50%; /* Align vertically at the center */
+  transform: translateY(-50%); /* Center vertically */
+  color: #fff; /* Optional: Change button color */
+}
+
+.swiper-button-prev {
+  left: 10px; /* Adjust horizontal position for the prev button */
+}
+
+.swiper-button-next {
+  right: 10px; 
+}
