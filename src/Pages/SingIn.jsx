@@ -1,6 +1,19 @@
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { TypeAnimation } from "react-type-animation";
+import { FaEye, FaEyeSlash } from "react-icons/fa"
+import { FirebaseContext } from "../FirebaseProvider/FirebaseProvider";
+import Swal from "sweetalert2";
+
+
 const SingIn = () => {
+  const [show,setShow] = useState(false)
+  const [error,setError] = useState('')
+  const navigate = useNavigate()
+
+  const {singInWithGoogle} = useContext(FirebaseContext)
+
+
   const submitHandler = (e) => {
     e.preventDefault();
     const form = new FormData(e.target);
@@ -8,9 +21,28 @@ const SingIn = () => {
     const pass = form.get("pass");
     console.log(email, pass);
   };
+
+  const googleClickHandler =()=>{
+    setError('')
+    singInWithGoogle()
+    .then(()=>{
+      navigate('/')
+      Swal.fire({
+        title: "You Registered Successfully",
+        text: "Thanks For Being With Us",
+        icon: "success",
+        confirmButtonText: "close",
+      });
+    })
+    .catch((err) => {
+      console.error(err);
+      setError("Failed to create an account. Please try again.");
+    });
+  }
+
   return (
-    <div className="bg-white rounded-xl w-4/5 mx-auto flex flex-col lg:flex-row justify-between">
-      <div className="w-2/3 mx-auto">
+    <div className="bg-white rounded-xl md:w-4/5 w-11/12 mx-auto flex flex-col lg:flex-row justify-between">
+      <div className="lg:w-2/3 w-full  mx-auto">
         <form onSubmit={submitHandler} className="card-body ">
           <h3 className="text-[#007aff] text-center text-2xl font-medium mb-3">
             <TypeAnimation
@@ -39,17 +71,22 @@ const SingIn = () => {
               required
             />
           </div>
-          <div className="form-control">
+          <div className="form-control relative">
             <label className="label">
               <span className="label-text">Password</span>
             </label>
             <input
               name="pass"
-              type="password"
+              type={show ? 'text' : "password"}
               placeholder="password"
               className="input input-bordered"
               required
             />
+            <div className="p-2 rounded-full bg-base-300 absolute right-3 top-11">
+              <Link onClick={()=>setShow(!show)}> 
+              {show ? <FaEye size={18}/> : <FaEyeSlash size={18}/>}
+              </Link>
+            </div>
             <label className="label">
               <a href="#" className="label-text-alt link link-hover">
                 Forgot password?
@@ -76,7 +113,9 @@ const SingIn = () => {
           Social Log In{" "}
         </h3>
         <div className="flex flex-col items-center justify-center gap-5 mt-6 w-11/12 mx-auto ">
-          <button className="w-full btn bg-gradient-to-tr from-[#901111] to-[#007aff] text-white ">
+          <button
+           onClick={googleClickHandler}
+           className="w-full btn bg-gradient-to-tr from-[#901111] to-[#007aff] text-white ">
             Sign In With Google
           </button>
           <button className="w-full btn bg-gradient-to-tr from-[#901111] to-[#007aff] text-white ">

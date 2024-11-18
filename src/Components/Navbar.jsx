@@ -1,8 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/logo.png"
+import { FirebaseContext } from "../FirebaseProvider/FirebaseProvider";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
+
+  const {user,logOutUser} = useContext(FirebaseContext)
+
+  const logOutHandler =()=>{
+    logOutUser()
+    .then(()=>{
+      Swal.fire({
+        title: "You Logged Out",
+        text: "Thanks For Being With Us",
+        icon: "success",
+        confirmButtonText: "close",
+      });
+    })
+  }
+
   const links = (
     <>
       <li>
@@ -50,7 +67,7 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[10] mt-3 w-52 p-2 shadow"
           >
             {links}
           </ul>
@@ -69,9 +86,15 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <NavLink
-         to={'LogIn'}
-         className={({isActive})=>`btn ${isActive? 'bg-[#007aff] text-white hover:text-[#007aff] ' : ''}` }>LogIn</NavLink>
+        {
+          user ? <button 
+          onClick={logOutHandler}
+          className="btn bg-[#007aff] text-white hover:text-[#007aff]">Log Out</button>
+          :
+          <NavLink
+          to={'LogIn'}
+          className={({isActive})=>`btn ${isActive? 'bg-[#007aff] text-white hover:text-[#007aff] ' : ''}` }>LogIn</NavLink>
+        }
       </div>
     </div>
   );

@@ -7,6 +7,7 @@ import LogIn from "../Pages/LogIn";
 import Dashboard from "../Pages/Dashboard";
 import SingIn from "../Pages/SingIn";
 import Register from "../Pages/Register";
+import PrivateRoute from "../privateRoute/PrivateRoute";
 
 
 export const routes = createBrowserRouter([
@@ -20,7 +21,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path :'DonateCamp',
-                element :<DonateCamp/>,
+                element :<PrivateRoute><DonateCamp/></PrivateRoute>,
                 loader :()=> fetch('data.json')
             },
             {

@@ -3,6 +3,8 @@ import Navbar from '../Components/Navbar'
 import { Outlet } from 'react-router-dom'
 import Footer from '../Pages/Footer'
 import 'animate.css'
+import Swal from 'sweetalert2'
+
 
 const MainLayout = () => {
   return (

@@ -1,27 +1,88 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { TypeAnimation } from "react-type-animation";
 import { FirebaseContext } from "../FirebaseProvider/FirebaseProvider";
+import Swal from "sweetalert2";
+import { FaEye, FaEyeSlash } from "react-icons/fa"
 const Register = () => {
+  const [error, setError] = useState("");
+  const [show,setShow] = useState(false)
+  const navigate = useNavigate()
 
-  const {createUser} = useContext(FirebaseContext)
+  const { createUser,singInWithGoogle } = useContext(FirebaseContext);
 
-    const submitHandler =(e)=>{
-        e.preventDefault()
-        const form = new FormData(e.target)
-        const name = form.get('name')
-        const photo = form.get('photo')
-        const email = form.get('email')
-        const pass = form.get('pass')
-        createUser(email,pass)
+  const submitHandler = (e) => {
+    e.preventDefault()
+    const form = new FormData(e.target);
+    const name = form.get("name");
+    const photo = form.get("photo");
+    const email = form.get("email");
+    const pass = form.get("pass");
+
+    // Password validation
+    const regex = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
+
+    if (pass.length < 6) {
+      setError("Password must be at least 6 characters long.");
+      return;
     }
 
+    if (!/[A-Z]/.test(pass)) {
+      setError("Password must contain at least one uppercase letter.");
+      return;
+    }
+
+    if (!/[a-z]/.test(pass)) {
+      setError("Password must contain at least one lowercase letter.");
+      return;
+    }
+
+    if (!regex.test(pass)) {
+      setError("Password is invalid.");
+      return;
+    }
+
+    setError(""); 
+
+    // Create user
+    createUser(email, pass)
+      .then(() => {
+        navigate('/')
+        Swal.fire({
+          title: "You Registered Successfully",
+          text: "Thanks For Being With Us",
+          icon: "success",
+          confirmButtonText: "close",
+        });
+      })
+      .catch((err) => {
+        console.error(err);
+        setError("Failed to create an account. Please try again.");
+      });
+  };
+  
+  const googleClickHandler =()=>{
+    setError('')
+    singInWithGoogle()
+    .then(()=>{
+      navigate('/')
+      Swal.fire({
+        title: "You Registered Successfully",
+        text: "Thanks For Being With Us",
+        icon: "success",
+        confirmButtonText: "close",
+      });
+    })
+    .catch((err) => {
+      console.error(err);
+      setError("Failed to create an account. Please try again.");
+    });
+  }
+
   return (
-    <div className="bg-white rounded-xl w-4/5 mx-auto flex flex-col lg:flex-row justify-between">
-      <div className="w-2/3 mx-auto">
-        <form 
-        onSubmit={submitHandler}
-        className="card-body ">
+    <div className="bg-white rounded-xl md:w-4/5 w-11/12 mx-auto flex flex-col lg:flex-row justify-between">
+      <div className="lg:w-2/3  w-full mx-auto">
+        <form onSubmit={submitHandler} className="card-body ">
           <h3 className="text-[#007aff] text-center text-2xl font-medium mb-3">
             <TypeAnimation
               sequence={[
@@ -73,22 +134,28 @@ const Register = () => {
               required
             />
           </div>
-          <div className="form-control">
+          <div className="form-control relative">
             <label className="label">
               <span className="label-text">Password</span>
             </label>
             <input
               name="pass"
-              type="password"
+              type={show ? 'text' : "password"}
               placeholder="password"
               className="input input-bordered"
               required
             />
-            <label className="label">
-              <a href="#" className="label-text-alt link link-hover">
-                Forgot password?
-              </a>
+            <div className="p-2 rounded-full bg-base-300 absolute right-3 top-11">
+              <Link onClick={()=>setShow(!show)}> 
+              {show ? <FaEye size={18}/> : <FaEyeSlash size={18}/>}
+              </Link>
+            </div>
+            {
+              error &&
+              <label className="label">
+              <p className="text-lg font-medium text-[#901111]">{error}</p>
             </label>
+            }
           </div>
           <div className="form-control mt-6">
             <button className="btn bg-[#007aff] text-white hover:text-[#007aff]">
@@ -106,11 +173,21 @@ const Register = () => {
         </form>
       </div>
       <div className="w-full lg:w-1/3 pt-10 bg-base-300 rounded-xl p-4">
-        <h3 className="text-3xl font-bold text-[#007aff] text-center">Social Log In </h3>
+        <h3 className="text-3xl font-bold text-[#007aff] text-center">
+          Social Log In{" "}
+        </h3>
         <div className="flex flex-col items-center justify-center gap-5 mt-6 w-11/12 mx-auto ">
-            <button className="w-full btn bg-gradient-to-tr from-[#901111] to-[#007aff] text-white ">Sign In With Google</button>
-            <button className="w-full btn bg-gradient-to-tr from-[#901111] to-[#007aff] text-white ">Sign In With Github</button>
-            <button className="w-full btn bg-gradient-to-tr from-[#901111] to-[#007aff] text-white  ">Sign In With Facebook</button>
+          <button 
+          onClick={googleClickHandler}
+          className="w-full btn bg-gradient-to-tr from-[#901111] to-[#007aff] text-white ">
+            Sign In With Google
+          </button>
+          <button className="w-full btn bg-gradient-to-tr from-[#901111] to-[#007aff] text-white ">
+            Sign In With Github
+          </button>
+          <button className="w-full btn bg-gradient-to-tr from-[#901111] to-[#007aff] text-white  ">
+            Sign In With Facebook
+          </button>
         </div>
       </div>
     </div>
