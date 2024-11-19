@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react'
 import Auth from '../firebaseConfig/Firebaseconfig'
-import {createUserWithEmailAndPassword,signInWithEmailAndPassword,signOut, FacebookAuthProvider,GithubAuthProvider, GoogleAuthProvider, signInWithPopup, onAuthStateChanged} from 'firebase/auth'
+import {createUserWithEmailAndPassword,signInWithEmailAndPassword,signOut, FacebookAuthProvider,GithubAuthProvider, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, updateProfile, sendPasswordResetEmail} from 'firebase/auth'
+import Swal from 'sweetalert2'
 
 
 export const FirebaseContext = createContext(null)
@@ -28,7 +29,12 @@ const FirebaseProvider = ({children}) => {
       await signOut(Auth)
     }
     catch(err) {
-      console.error('SignOut Error', err)
+      Swal.fire({
+        title: `${err.message || err.code}`,
+        text: "Thanks For Being With Us",
+        icon: "warning",
+        confirmButtonText: "close",
+      });
     }
     finally{
       setLoading(false)
@@ -49,18 +55,39 @@ const FirebaseProvider = ({children}) => {
     return signInWithPopup(Auth,facebookProvider)
   }
 
+  const userProfileUpdate =async (updatedData)=>{
+    if(Auth.currentUser){
+      try{
+        await updateProfile(Auth.currentUser,updatedData)
+        setUser({...Auth.currentUser})
+      }
+      catch(err){
+        Swal.fire({
+          title: `${err.message || err.code}`,
+          text: "Thanks For Being With Us",
+          icon: "warning",
+          confirmButtonText: "close",
+        });
+      }
+    }
+  }
+
+  const resetPassword = (email)=>{
+    return sendPasswordResetEmail(Auth,email)
+  }
+
   useEffect(()=>{
     const unsubscribe = onAuthStateChanged(Auth,currentUser=>{
       if(currentUser){
-        setLoading(false)
         setUser(currentUser)
       }else{
         setUser(null)
       }
+      setLoading(false); 
     })
     return ()=> unsubscribe()
 
-  },[])
+  },[Auth])
 
   const authInfo ={
     createUser,
@@ -69,6 +96,8 @@ const FirebaseProvider = ({children}) => {
     singInWithGoogle,
     singInWithGithub,
     singInWithFacebook,
+    userProfileUpdate,
+    resetPassword,
     user,
     loading
   }

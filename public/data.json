@@ -1,111 +1,110 @@
 [
-    {
-      "id": 1,
-      "title": "Warm Hearts Dhaka",
-      "image": "https://i.ibb.co/7W5VxCH/card1.jpg",
-      "description": "Donate winter clothes to help underprivileged families stay warm in Dhaka during the harsh winter.",
-      "status": "Active",
-      "contactInfo": "dhaka@winterclothes.org",
-      "division": "Dhaka"
-    },
-    {
-      "id": 2,
-      "title": "Sylhet Winter Aid",
-      "image": "https://i.ibb.co/HKKyPLC/card5.jpg",
-      "description": "Join our mission to provide warm clothing for the needy in the cold Sylhet winters.",
-      "status": "Active",
-      "contactInfo": "sylhet@winterclothes.org",
-      "division": "Sylhet"
-    },
-    {
-      "id": 3,
-      "title": "Chittagong Blanket Drive",
-      "image": "https://i.ibb.co/WpdHtWq/card3.jpg",
-      "description": "Help us distribute blankets and warm clothes to impoverished families in Chittagong.",
-      "status": "Active",
-      "contactInfo": "chittagong@winterclothes.org",
-      "division": "Chittagong"
-    },
-    {
-      "id": 4,
-      "title": "Khulna Warmth Campaign",
-      "image": "https://i.ibb.co/PzH2fvf/card6.webp",
-      "description": "Provide winter essentials to those in need in the Khulna region this winter.",
-      "status": "Completed",
-      "contactInfo": "khulna@winterclothes.org",
-      "division": "Khulna"
-    },
-    {
-      "id": 5,
-      "title": "Winter Relief Dhaka",
-      "image": "https://i.ibb.co/d5cd5hz/card2.jpg",
-      "description": "Support our drive to collect coats and sweaters for Dhaka's homeless population.",
-      "status": "Active",
-      "contactInfo": "relief@winterclothes.org",
-      "division": "Dhaka"
-    },
-    {
-      "id": 6,
-      "title": "Sylhet Cozy Clothing",
-      "image": "https://i.ibb.co/PMzz031/card4.jpg",
-      "description": "Ensure warmth for children and elderly in Sylhet by donating winter garments.",
-      "status": "Active",
-      "contactInfo": "sylhetcozy@winterclothes.org",
-      "division": "Sylhet"
-    },
-    {
-      "id": 7,
-      "title": "Chittagong Warm Souls",
-      "image": "https://i.ibb.co/LZXS0HV/card7.jpg",
-      "description": "Your donation of jackets and shawls can bring warmth to struggling families in Chittagong.",
-      "status": "Active",
-      "contactInfo": "warmchittagong@winterclothes.org",
-      "division": "Chittagong"
-    },
-    {
-      "id": 8,
-      "title": "Khulna Blanket Support",
-      "image": "https://i.ibb.co/DQN4zwG/card8.jpg",
-      "description": "Join hands to deliver blankets and warm outfits to the most vulnerable in Khulna.",
-      "status": "Completed",
-      "contactInfo": "blanketkhulna@winterclothes.org",
-      "division": "Khulna"
-    },
-    {
-      "id": 9,
-      "title": "Dhaka Kids Winter Drive",
-      "image": "https://i.ibb.co/MRPL04w/card9.jpg",
-      "description": "Help kids in Dhaka brave the cold with warm sweaters and mittens.",
-      "status": "Active",
-      "contactInfo": "kidsdhaka@winterclothes.org",
-      "division": "Dhaka"
-    },
-    {
-      "id": 10,
-      "title": "Sylhet Warm Hands",
-      "image": "https://i.ibb.co/SyynFZc/card10.jpg",
-      "description": "Distribute gloves and scarves to keep hands and necks warm in Sylhet.",
-      "status": "Active",
-      "contactInfo": "warmsylhet@winterclothes.org",
-      "division": "Sylhet"
-    },
-    {
-      "id": 11,
-      "title": "Chittagong Winter Shelter",
-      "image": "https://i.ibb.co/qMz82tL/card10.jpg",
-      "description": "Provide warm bedding and clothes to families in Chittagong facing extreme cold.",
-      "status": "Active",
-      "contactInfo": "shelterchittagong@winterclothes.org",
-      "division": "Chittagong"
-    },
-    {
-      "id": 12,
-      "title": "Khulna Winter Essentials",
-      "image": "https://i.ibb.co/C0P7GC2/card11.jpg",
-      "description": "Donate winter essentials to Khulna's elderly and children to combat the cold.",
-      "status": "Active",
-      "contactInfo": "essentials@winterclothes.org",
-      "division": "Khulna"
-    }
-  ]
-  
+  {
+    "id": 1,
+    "title": "Warm Hearts Dhaka",
+    "image": "https://i.ibb.co/7W5VxCH/card1.jpg",
+    "description": "Donate winter clothes to help underprivileged families stay warm in Dhaka during the harsh winter. Winters in Dhaka can be especially tough for those living on the streets or in poorly insulated homes. By donating to this campaign, you’re not just providing clothing—you’re offering hope and warmth to those in desperate need. Every piece of clothing, whether it’s a coat, sweater, or blanket, plays a critical role in protecting vulnerable individuals from the cold. This initiative aims to reach as many people as possible, ensuring no one is left out in the cold. Together, we can make this winter a little warmer for countless families. Your support will directly impact lives and bring smiles to those who need it most.",
+    "status": "Active",
+    "contactInfo": "dhaka@winterclothes.org",
+    "division": "Dhaka"
+  },
+  {
+    "id": 2,
+    "title": "Sylhet Winter Aid",
+    "image": "https://i.ibb.co/HKKyPLC/card5.jpg",
+    "description": "Join our mission to provide warm clothing for the needy in the cold Sylhet winters. Sylhet’s chilly weather can be unforgiving, particularly for those without proper winter gear. This campaign focuses on distributing essential winter clothing such as jackets, shawls, and blankets to ensure the well-being of vulnerable families. Many of the beneficiaries are from remote and underprivileged communities, where access to warm clothing is limited. By contributing, you are helping protect individuals from the health risks associated with extreme cold, such as hypothermia. Your generosity brings warmth, comfort, and hope to countless lives, ensuring a safer winter for all.",
+    "status": "Active",
+    "contactInfo": "sylhet@winterclothes.org",
+    "division": "Sylhet"
+  },
+  {
+    "id": 3,
+    "title": "Chittagong Blanket Drive",
+    "image": "https://i.ibb.co/WpdHtWq/card3.jpg",
+    "description": "Help us distribute blankets and warm clothes to impoverished families in Chittagong. This initiative targets those most in need, including the elderly, children, and individuals with disabilities. Winter in Chittagong can be harsh, particularly for families living in temporary shelters or poorly built homes. By donating, you ensure that these individuals receive essential items to protect against the cold. This drive is about more than just warmth; it’s about showing care and solidarity. Every contribution helps us reach more people and bring a touch of humanity to those facing the toughest winters.",
+    "status": "Active",
+    "contactInfo": "chittagong@winterclothes.org",
+    "division": "Chittagong"
+  },
+  {
+    "id": 4,
+    "title": "Khulna Warmth Campaign",
+    "image": "https://i.ibb.co/PzH2fvf/card6.webp",
+    "description": "Provide winter essentials to those in need in the Khulna region this winter. Many underprivileged families in Khulna struggle to stay warm during the colder months, often leading to severe health issues. This campaign aims to distribute high-quality winter clothing, including jackets, gloves, and blankets, to those in desperate need. Your support helps us reach the most vulnerable individuals, ensuring they have the protection needed to face the winter. Together, we can make a lasting impact by delivering warmth and care to those who need it the most.",
+    "status": "Completed",
+    "contactInfo": "khulna@winterclothes.org",
+    "division": "Khulna"
+  },
+  {
+    "id": 5,
+    "title": "Winter Relief Dhaka",
+    "image": "https://i.ibb.co/d5cd5hz/card2.jpg",
+    "description": "Support our drive to collect coats and sweaters for Dhaka's homeless population. This campaign specifically focuses on the most vulnerable groups, including street dwellers and low-income families, who face the brunt of Dhaka’s cold weather. Your contributions provide not just physical warmth but also a sense of dignity and care to those who often feel overlooked. By donating, you’re directly helping individuals combat the cold and avoid the health risks associated with prolonged exposure. Let’s work together to make this winter safer and more comfortable for Dhaka’s most vulnerable.",
+    "status": "Active",
+    "contactInfo": "relief@winterclothes.org",
+    "division": "Dhaka"
+  },
+  {
+    "id": 6,
+    "title": "Sylhet Cozy Clothing",
+    "image": "https://i.ibb.co/PMzz031/card4.jpg",
+    "description": "Ensure warmth for children and the elderly in Sylhet by donating winter garments. This campaign targets families living in remote areas who often struggle to afford basic winter necessities. The donated items, including sweaters, coats, and scarves, are carefully distributed to ensure they reach those most in need. With your help, we can provide a lifeline during the harsh winter months, bringing comfort and security to hundreds of individuals. Join us in spreading warmth and kindness this season by contributing to this meaningful cause.",
+    "status": "Active",
+    "contactInfo": "sylhetcozy@winterclothes.org",
+    "division": "Sylhet"
+  },
+  {
+    "id": 7,
+    "title": "Chittagong Warm Souls",
+    "image": "https://i.ibb.co/LZXS0HV/card7.jpg",
+    "description": "Your donation of jackets and shawls can bring warmth to struggling families in Chittagong. This initiative aims to ensure that no one faces the chilling winter nights without proper protection. By donating, you’re providing essential clothing and spreading warmth and compassion. Chittagong’s coastal areas often face unexpected cold spells, making it difficult for those in makeshift homes to stay warm. This campaign focuses on reaching the most remote and vulnerable communities. Every item donated is a step toward ensuring a safer, warmer winter for these families. Let’s work together to make this a reality.",
+    "status": "Active",
+    "contactInfo": "warmchittagong@winterclothes.org",
+    "division": "Chittagong"
+  },
+  {
+    "id": 8,
+    "title": "Khulna Blanket Support",
+    "image": "https://i.ibb.co/DQN4zwG/card8.jpg",
+    "description": "Join hands to deliver blankets and warm outfits to the most vulnerable in Khulna. This campaign targets areas where winter often causes severe hardship, especially for children and the elderly. Your generosity can bring immediate relief to those struggling in the cold. Every blanket and warm garment distributed is a lifeline for those in need, helping them to fend off the biting cold. Khulna’s vulnerable communities depend on our collective efforts to get through the winter season. Be a part of the change and bring warmth to many.",
+    "status": "Completed",
+    "contactInfo": "blanketkhulna@winterclothes.org",
+    "division": "Khulna"
+  },
+  {
+    "id": 9,
+    "title": "Dhaka Kids Winter Drive",
+    "image": "https://i.ibb.co/MRPL04w/card9.jpg",
+    "description": "Help kids in Dhaka brave the cold with warm sweaters and mittens. This drive focuses on providing essential winter wear to children who need it the most. Many kids in Dhaka endure the harsh winter without adequate clothing, putting their health and well-being at risk. By contributing, you can ensure these children stay warm and safe. From distributing sweaters to warm gloves, this campaign makes sure no child has to face the winter unprotected. Every contribution brings hope and comfort to the youngest members of society. Let’s bring smiles and warmth this winter.",
+    "status": "Active",
+    "contactInfo": "kidsdhaka@winterclothes.org",
+    "division": "Dhaka"
+  },
+  {
+    "id": 10,
+    "title": "Sylhet Warm Hands",
+    "image": "https://i.ibb.co/SyynFZc/card10.jpg",
+    "description": "Distribute gloves and scarves to keep hands and necks warm in Sylhet. Your donations can make a crucial difference in protecting the vulnerable from the bitter cold. With a focus on underprivileged families, this campaign ensures that no one is left without basic winter necessities. Sylhet's cold winters can be harsh, particularly for those working outdoors or living in poorly insulated homes. By participating, you are contributing directly to the safety and comfort of these communities. Together, we can spread warmth and protect Sylhet’s people from the chill.",
+    "status": "Active",
+    "contactInfo": "warmsylhet@winterclothes.org",
+    "division": "Sylhet"
+  },
+  {
+    "id": 11,
+    "title": "Chittagong Winter Shelter",
+    "image": "https://i.ibb.co/qMz82tL/card10.jpg",
+    "description": "Provide warm bedding and clothes to families in Chittagong facing extreme cold. Many low-income families struggle to find adequate shelter and warmth during the winter season. This campaign focuses on offering immediate relief through the distribution of warm bedding and winter clothing. Chittagong’s winters can be unforgiving, especially for those living in substandard housing. Your support can help us provide critical resources to ensure these families stay warm. Let’s come together to create a safer, warmer environment for everyone.",
+    "status": "Active",
+    "contactInfo": "shelterchittagong@winterclothes.org",
+    "division": "Chittagong"
+  },
+  {
+    "id": 12,
+    "title": "Khulna Winter Essentials",
+    "image": "https://i.ibb.co/C0P7GC2/card11.jpg",
+    "description": "Donate winter essentials to Khulna's elderly and children to combat the cold. This campaign is dedicated to providing high-quality, durable winter clothing and accessories to those in dire need. Elderly individuals and young children are particularly vulnerable during the cold months, as they often lack the proper attire to keep themselves warm. By donating to this cause, you’re directly improving the quality of life for these individuals. Your support can help us reach more people and ensure that no one in Khulna has to suffer through the cold without protection.",
+    "status": "Active",
+    "contactInfo": "essentials@winterclothes.org",
+    "division": "Khulna"
+  }
+]

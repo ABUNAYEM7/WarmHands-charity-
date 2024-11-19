@@ -9,7 +9,7 @@ const Register = () => {
   const [show,setShow] = useState(false)
   const navigate = useNavigate()
 
-  const { createUser,singInWithGoogle } = useContext(FirebaseContext);
+  const { createUser,singInWithGoogle,userProfileUpdate,singInWithGithub,singInWithFacebook } = useContext(FirebaseContext);
 
   const submitHandler = (e) => {
     e.preventDefault()
@@ -18,7 +18,11 @@ const Register = () => {
     const photo = form.get("photo");
     const email = form.get("email");
     const pass = form.get("pass");
-
+    
+    const updatedData = {
+      displayName :name,
+      photoURL : photo
+    }
     // Password validation
     const regex = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
 
@@ -46,6 +50,9 @@ const Register = () => {
 
     // Create user
     createUser(email, pass)
+    .then(()=>{ 
+      return userProfileUpdate(updatedData)
+    })
       .then(() => {
         navigate('/')
         Swal.fire({
@@ -56,8 +63,7 @@ const Register = () => {
         });
       })
       .catch((err) => {
-        console.error(err);
-        setError("Failed to create an account. Please try again.");
+        setError(err.message.split('/')[1].split(')')[0] || err.code);
       });
   };
   
@@ -74,9 +80,55 @@ const Register = () => {
       });
     })
     .catch((err) => {
-      console.error(err);
-      setError("Failed to create an account. Please try again.");
+      Swal.fire({
+        title: `${err.message || err.code}`,
+        text: "Thanks For Being With Us",
+        icon: "warning",
+        confirmButtonText: "close",
+      });
     });
+  }
+  const githubClickHandler =()=>{
+    setError('')
+    singInWithGithub()
+    .then(()=>{
+      navigate('/')
+      Swal.fire({
+        title: "You Registered Successfully",
+        text: "Thanks For Being With Us",
+        icon: "success",
+        confirmButtonText: "close",
+      });
+    })
+    .catch((err) => {
+      Swal.fire({
+        title: `${err.message || err.code}`,
+        text: "Thanks For Being With Us",
+        icon: "warning",
+        confirmButtonText: "close",
+      });
+    });;
+  }
+  const facebookClickHandler =()=>{
+    setError('')
+    singInWithFacebook()
+    .then(()=>{
+      navigate('/')
+      Swal.fire({
+        title: "You Registered Successfully",
+        text: "Thanks For Being With Us",
+        icon: "success",
+        confirmButtonText: "close",
+      });
+    })
+    .catch((err) => {
+      Swal.fire({
+        title: `${err.message || err.code}`,
+        text: "Thanks For Being With Us",
+        icon: "warning",
+        confirmButtonText: "close",
+      });
+    });;
   }
 
   return (
@@ -159,7 +211,7 @@ const Register = () => {
           </div>
           <div className="form-control mt-6">
             <button className="btn bg-[#007aff] text-white hover:text-[#007aff]">
-              Login
+              Register
             </button>
           </div>
           <div>
@@ -182,10 +234,14 @@ const Register = () => {
           className="w-full btn bg-gradient-to-tr from-[#901111] to-[#007aff] text-white ">
             Sign In With Google
           </button>
-          <button className="w-full btn bg-gradient-to-tr from-[#901111] to-[#007aff] text-white ">
+          <button 
+          onClick={githubClickHandler}
+          className="w-full btn bg-gradient-to-tr from-[#901111] to-[#007aff] text-white ">
             Sign In With Github
           </button>
-          <button className="w-full btn bg-gradient-to-tr from-[#901111] to-[#007aff] text-white  ">
+          <button 
+          onClick={facebookClickHandler}
+          className="w-full btn bg-gradient-to-tr from-[#901111] to-[#007aff] text-white  ">
             Sign In With Facebook
           </button>
         </div>
