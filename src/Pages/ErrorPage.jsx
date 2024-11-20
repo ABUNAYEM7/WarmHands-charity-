@@ -12,7 +12,10 @@ const ErrorPage = () => {
         <p className="text-gray-600">
           The page you're looking for doesn't exist or an error occurred.
         </p>
-        <Link to="/" className="btn bg-gradient-to-tr from-[#901111] to-[#007aff] text-white ">
+        <Link
+          to="/"
+          className="btn bg-gradient-to-tr from-[#901111] to-[#007aff] text-white "
+        >
           Back to Home
         </Link>
       </div>

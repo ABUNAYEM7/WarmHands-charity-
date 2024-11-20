@@ -5,11 +5,10 @@ import image2 from "../assets/cloth-2.PNG";
 import image3 from "../assets/cloth-3.PNG";
 import donateBannerLeft from "../assets/donateBannerLeft.jpg";
 import { FaFaceGrinHearts } from "react-icons/fa6";
-import AOS from "aos"; 
+import AOS from "aos";
 import Aos from "aos";
 
 const ItemsWeLove = () => {
-
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
@@ -76,10 +75,7 @@ const ItemsWeLove = () => {
           />
         </div>
       </div>
-      <div
-        className="w-full flex justify-center"
-        data-aos="fade-down"
-      >
+      <div className="w-full flex justify-center" data-aos="fade-down">
         <Link
           to={"/DonateCamp/DonateDetails/1"}
           className="btn bg-[#007aff] text-white hover:text-[#007aff]"

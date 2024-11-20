@@ -3,26 +3,26 @@ import { Link, useNavigate } from "react-router-dom";
 import { TypeAnimation } from "react-type-animation";
 import { FirebaseContext } from "../FirebaseProvider/FirebaseProvider";
 import Swal from "sweetalert2";
-import { FaEye, FaEyeSlash } from "react-icons/fa"
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 const Register = () => {
   const [error, setError] = useState("");
-  const [show,setShow] = useState(false)
-  const navigate = useNavigate()
+  const [show, setShow] = useState(false);
+  const navigate = useNavigate();
 
-  const { createUser,singInWithGoogle,userProfileUpdate,singInWithGithub,singInWithFacebook } = useContext(FirebaseContext);
+  const { createUser, singInWithGoogle, userProfileUpdate, singInWithGithub } =
+    useContext(FirebaseContext);
 
   const submitHandler = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const form = new FormData(e.target);
     const name = form.get("name");
     const photo = form.get("photo");
     const email = form.get("email");
     const pass = form.get("pass");
-    
     const updatedData = {
-      displayName :name,
-      photoURL : photo
-    }
+      displayName: name,
+      photoURL: photo,
+    };
     // Password validation
     const regex = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
 
@@ -46,15 +46,15 @@ const Register = () => {
       return;
     }
 
-    setError(""); 
+    setError("");
 
     // Create user
     createUser(email, pass)
-    .then(()=>{ 
-      return userProfileUpdate(updatedData)
-    })
       .then(() => {
-        navigate('/')
+        return userProfileUpdate(updatedData);
+      })
+      .then(() => {
+        navigate("/");
         Swal.fire({
           title: "You Registered Successfully",
           text: "Thanks For Being With Us",
@@ -63,73 +63,53 @@ const Register = () => {
         });
       })
       .catch((err) => {
-        setError(err.message.split('/')[1].split(')')[0] || err.code);
+        setError(err.message.split("/")[1].split(")")[0] || err.code);
       });
   };
-  
-  const googleClickHandler =()=>{
-    setError('')
+
+  const googleClickHandler = () => {
+    setError("");
     singInWithGoogle()
-    .then(()=>{
-      navigate('/')
-      Swal.fire({
-        title: "You Registered Successfully",
-        text: "Thanks For Being With Us",
-        icon: "success",
-        confirmButtonText: "close",
+      .then(() => {
+        navigate("/");
+        Swal.fire({
+          title: "You Registered Successfully",
+          text: "Thanks For Being With Us",
+          icon: "success",
+          confirmButtonText: "close",
+        });
+      })
+      .catch((err) => {
+        Swal.fire({
+          title: `${err.message || err.code}`,
+          text: "Thanks For Being With Us",
+          icon: "warning",
+          confirmButtonText: "close",
+        });
       });
-    })
-    .catch((err) => {
-      Swal.fire({
-        title: `${err.message || err.code}`,
-        text: "Thanks For Being With Us",
-        icon: "warning",
-        confirmButtonText: "close",
-      });
-    });
-  }
-  const githubClickHandler =()=>{
-    setError('')
+  };
+
+  const githubClickHandler = () => {
+    setError("");
     singInWithGithub()
-    .then(()=>{
-      navigate('/')
-      Swal.fire({
-        title: "You Registered Successfully",
-        text: "Thanks For Being With Us",
-        icon: "success",
-        confirmButtonText: "close",
+      .then(() => {
+        navigate("/");
+        Swal.fire({
+          title: "You Registered Successfully",
+          text: "Thanks For Being With Us",
+          icon: "success",
+          confirmButtonText: "close",
+        });
+      })
+      .catch((err) => {
+        Swal.fire({
+          title: `${err.message || err.code}`,
+          text: "Thanks For Being With Us",
+          icon: "warning",
+          confirmButtonText: "close",
+        });
       });
-    })
-    .catch((err) => {
-      Swal.fire({
-        title: `${err.message || err.code}`,
-        text: "Thanks For Being With Us",
-        icon: "warning",
-        confirmButtonText: "close",
-      });
-    });;
-  }
-  const facebookClickHandler =()=>{
-    setError('')
-    singInWithFacebook()
-    .then(()=>{
-      navigate('/')
-      Swal.fire({
-        title: "You Registered Successfully",
-        text: "Thanks For Being With Us",
-        icon: "success",
-        confirmButtonText: "close",
-      });
-    })
-    .catch((err) => {
-      Swal.fire({
-        title: `${err.message || err.code}`,
-        text: "Thanks For Being With Us",
-        icon: "warning",
-        confirmButtonText: "close",
-      });
-    });;
-  }
+  };
 
   return (
     <div className="bg-white rounded-xl md:w-4/5 w-11/12 mx-auto flex flex-col lg:flex-row justify-between">
@@ -192,22 +172,21 @@ const Register = () => {
             </label>
             <input
               name="pass"
-              type={show ? 'text' : "password"}
+              type={show ? "text" : "password"}
               placeholder="password"
               className="input input-bordered"
               required
             />
             <div className="p-2 rounded-full bg-base-300 absolute right-3 top-11">
-              <Link onClick={()=>setShow(!show)}> 
-              {show ? <FaEye size={18}/> : <FaEyeSlash size={18}/>}
+              <Link onClick={() => setShow(!show)}>
+                {show ? <FaEye size={18} /> : <FaEyeSlash size={18} />}
               </Link>
             </div>
-            {
-              error &&
+            {error && (
               <label className="label">
-              <p className="text-lg font-medium text-[#901111]">{error}</p>
-            </label>
-            }
+                <p className="text-lg font-medium text-[#901111]">{error}</p>
+              </label>
+            )}
           </div>
           <div className="form-control mt-6">
             <button className="btn bg-[#007aff] text-white hover:text-[#007aff]">
@@ -229,20 +208,17 @@ const Register = () => {
           Social Log In{" "}
         </h3>
         <div className="flex flex-col items-center justify-center gap-5 mt-6 w-11/12 mx-auto ">
-          <button 
-          onClick={googleClickHandler}
-          className="w-full btn bg-gradient-to-tr from-[#901111] to-[#007aff] text-white ">
+          <button
+            onClick={googleClickHandler}
+            className="w-full btn bg-gradient-to-tr from-[#901111] to-[#007aff] text-white "
+          >
             Sign In With Google
           </button>
-          <button 
-          onClick={githubClickHandler}
-          className="w-full btn bg-gradient-to-tr from-[#901111] to-[#007aff] text-white ">
+          <button
+            onClick={githubClickHandler}
+            className="w-full btn bg-gradient-to-tr from-[#901111] to-[#007aff] text-white "
+          >
             Sign In With Github
-          </button>
-          <button 
-          onClick={facebookClickHandler}
-          className="w-full btn bg-gradient-to-tr from-[#901111] to-[#007aff] text-white  ">
-            Sign In With Facebook
           </button>
         </div>
       </div>

@@ -176,9 +176,6 @@ const SingIn = () => {
           className="w-full btn bg-gradient-to-tr from-[#901111] to-[#007aff] text-white ">
             Sign In With Github
           </button>
-          <button className="w-full btn bg-gradient-to-tr from-[#901111] to-[#007aff] text-white  ">
-            Sign In With Facebook
-          </button>
         </div>
       </div>
     </div>

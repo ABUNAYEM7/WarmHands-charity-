@@ -1,6 +1,5 @@
 import logo from "../assets/logo.png";
-import { Link} from "react-router-dom";
-
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -13,7 +12,7 @@ const Footer = () => {
           Spread Warmth Share Love
         </p>
       </aside>
-      <nav className='space-y-3'>
+      <nav className="space-y-3">
         <h6 className="footer-title text-xl">Contact Us</h6>
         <Link to="/about" className="link link-hover">
           About the Initiative
@@ -25,7 +24,7 @@ const Footer = () => {
           Donation Process
         </Link>
       </nav>
-      <nav >
+      <nav>
         <h6 className="footer-title  text-xl">Social</h6>
         <div className="grid grid-flow-col gap-10">
           <Link>
@@ -62,7 +61,9 @@ const Footer = () => {
             </svg>
           </Link>
         </div>
-        <h6 className="footer-title  text-xl mt-5">© 2024 WarmHands All rights reserved.</h6>
+        <h6 className="footer-title  text-xl mt-5">
+          © 2024 WarmHands All rights reserved.
+        </h6>
       </nav>
     </footer>
   );

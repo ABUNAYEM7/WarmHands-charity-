@@ -6,31 +6,30 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 const ForgetPass = () => {
   const [error, setError] = useState("");
-  const navigate = useNavigate()
-  const location = useLocation()
+  const navigate = useNavigate();
+  const location = useLocation();
   const userEmail = location.state?.email;
-  const [email,setEmail] = useState(userEmail)
+  const [email, setEmail] = useState(userEmail);
 
   const { resetPassword } = useContext(FirebaseContext);
 
-
   const submitHandler = (e) => {
     e.preventDefault();
-    setError('')
+    setError("");
     const form = new FormData(e.target);
     const email = form.get("email");
     resetPassword(email)
-    .then(()=>{
+      .then(() => {
         Swal.fire({
-            title: "Password reset email sent!",
-            text: "Please Check Your Email",
-            icon: "success",
-            confirmButtonText: "close",
-          });
-          window.open("https://mail.google.com", "_blank")
-          navigate('/LogIn')
-    })
-    .catch(err=> setError(err))
+          title: "Password reset email sent!",
+          text: "Please Check Your Email",
+          icon: "success",
+          confirmButtonText: "close",
+        });
+        window.open("https://mail.google.com", "_blank");
+        navigate("/LogIn");
+      })
+      .catch((err) => setError(err));
   };
 
   return (
@@ -60,7 +59,7 @@ const ForgetPass = () => {
             <input
               name="email"
               value={userEmail}
-              onChange={(e)=> setEmail(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
               type="email"
               placeholder="email"
               className="input input-bordered"
@@ -76,7 +75,7 @@ const ForgetPass = () => {
             <button className="btn bg-[#007aff] text-white hover:text-[#007aff]">
               Confirm
             </button>
-            </div>
+          </div>
         </form>
       </div>
     </div>

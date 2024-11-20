@@ -24,7 +24,6 @@ WarmHands is a charity project that connects donors with people in need across t
 2. Login options:  
    - With **Google**  
    - With **GitHub**  
-   - With **Facebook**  
 3. Reset your password via email (Gmail).  
 4. Edit personal information.  
 5. Logout functionality.  

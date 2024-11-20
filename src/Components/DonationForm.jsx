@@ -41,7 +41,7 @@ const DonationForm = () => {
       toast: true,
       position: "top-center",
       showConfirmButton: false,
-      timer: 1000,
+      timer: 2000,
       timerProgressBar: true,
     });
 

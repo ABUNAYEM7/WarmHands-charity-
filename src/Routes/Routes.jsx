@@ -8,20 +8,18 @@ import SingIn from "../Pages/SingIn";
 import Register from "../Pages/Register";
 import DonateCards from "../Pages/DonateCards";
 import DonateCamp from "../Pages/DonateCamp";
-import PrivateRoute from '../privateRoute/PrivateRoute'
+import PrivateRoute from "../privateRoute/PrivateRoute";
 import DonateDetails from "../Pages/DonateDetails";
 import ForgetPass from "../Pages/ForgetPass";
 import UpdateProfile from "../Pages/UpdateProfile";
 import ErrorPage from "../Pages/ErrorPage";
-import "aos/dist/aos.css"; 
-
-
+import "aos/dist/aos.css";
 
 export const routes = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
-    errorElement : <ErrorPage/>,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
@@ -38,19 +36,23 @@ export const routes = createBrowserRouter([
           },
           {
             path: "/DonateCamp/DonateDetails/:id",
-            element:<PrivateRoute><DonateDetails/></PrivateRoute>,
-            loader: async({params}) =>{
-                const res = await fetch('/data.json')
-                const data = await res.json()
-                const singleData = data.find(d=> d.id == params.id )
+            element: (
+              <PrivateRoute>
+                <DonateDetails />
+              </PrivateRoute>
+            ),
+            loader: async ({ params }) => {
+              const res = await fetch("/data.json");
+              const data = await res.json();
+              const singleData = data.find((d) => d.id == params.id);
 
-                if (!singleData) {
-                    throw new Error("Data not found!"); 
-                  }
+              if (!singleData) {
+                throw new Error("Data not found!");
+              }
 
-                return {singleData, id: params.id}
+              return { singleData, id: params.id };
             },
-          }
+          },
         ],
       },
       {
@@ -59,13 +61,17 @@ export const routes = createBrowserRouter([
       },
       {
         path: "Dashboard",
-        element: <PrivateRoute><Dashboard /></PrivateRoute>,
-        children :[
+        element: (
+          <PrivateRoute>
+            <Dashboard />
+          </PrivateRoute>
+        ),
+        children: [
           {
-            path : '/Dashboard/UpdateProfile',
-            element : <UpdateProfile/>
-          }
-        ]
+            path: "/Dashboard/UpdateProfile",
+            element: <UpdateProfile />,
+          },
+        ],
       },
       {
         path: "LogIn",
@@ -81,7 +87,7 @@ export const routes = createBrowserRouter([
           },
           {
             path: "/LogIn/ForgetPass",
-            element:<ForgetPass/>,
+            element: <ForgetPass />,
           },
         ],
       },

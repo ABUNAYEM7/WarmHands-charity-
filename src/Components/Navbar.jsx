@@ -4,6 +4,7 @@ import logo from "../assets/logo.png";
 import { FirebaseContext } from "../FirebaseProvider/FirebaseProvider";
 import Swal from "sweetalert2";
 import { IoPersonCircleSharp } from "react-icons/io5";
+import Snowfall from "react-snowfall";
 
 const Navbar = () => {
   const { user, logOutUser } = useContext(FirebaseContext);
@@ -74,6 +75,7 @@ const Navbar = () => {
 
   return (
     <div className="navbar fixed top-0 left-0  bg-blue-300/50 backdrop-blur-md z-10">
+      <Snowfall color="white" snowflakeCount={50} />
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -115,8 +117,8 @@ const Navbar = () => {
       <div className="navbar-end">
         {user ? (
           <details className="dropdown  dropdown-end">
-             <summary className="btn m-2 rounded-full px-2">
-              {user.photoURL? (
+            <summary className="btn m-2 rounded-full px-2">
+              {user.photoURL ? (
                 <img
                   src={user.photoURL}
                   alt="User Profile"

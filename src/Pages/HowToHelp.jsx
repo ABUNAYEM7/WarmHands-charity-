@@ -4,7 +4,7 @@ import HowItWorks from "../Components/HowItWorks";
 const HowToHelp = () => {
   return (
     <div className="min-h-screen bg-gray-100 py-10">
-     <HowItWorks/>
+      <HowItWorks />
     </div>
   );
 };
