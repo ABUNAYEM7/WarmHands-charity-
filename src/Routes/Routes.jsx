@@ -13,6 +13,10 @@ import DonateDetails from "../Pages/DonateDetails";
 import ForgetPass from "../Pages/ForgetPass";
 import UpdateProfile from "../Pages/UpdateProfile";
 import ErrorPage from "../Pages/ErrorPage";
+import "aos/dist/aos.css"; 
+
+
+
 export const routes = createBrowserRouter([
   {
     path: "/",

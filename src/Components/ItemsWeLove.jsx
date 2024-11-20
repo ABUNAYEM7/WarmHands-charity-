@@ -5,12 +5,13 @@ import image2 from "../assets/cloth-2.PNG";
 import image3 from "../assets/cloth-3.PNG";
 import donateBannerLeft from "../assets/donateBannerLeft.jpg";
 import { FaFaceGrinHearts } from "react-icons/fa6";
-import "aos/dist/aos.css"; // Import AOS styles
-import AOS from "aos"; // Import AOS
+import AOS from "aos"; 
+import Aos from "aos";
 
 const ItemsWeLove = () => {
+
   useEffect(() => {
-    AOS.init({ duration: 1000 }); // Initialize AOS with animation duration
+    AOS.init({ duration: 1000 });
   }, []);
 
   return (
