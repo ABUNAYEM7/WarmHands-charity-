@@ -12,10 +12,12 @@ import PrivateRoute from '../privateRoute/PrivateRoute'
 import DonateDetails from "../Pages/DonateDetails";
 import ForgetPass from "../Pages/ForgetPass";
 import UpdateProfile from "../Pages/UpdateProfile";
+import ErrorPage from "../Pages/ErrorPage";
 export const routes = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
+    errorElement : <ErrorPage/>,
     children: [
       {
         path: "/",

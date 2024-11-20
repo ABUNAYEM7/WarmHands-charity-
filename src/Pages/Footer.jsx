@@ -62,6 +62,7 @@ const Footer = () => {
             </svg>
           </Link>
         </div>
+        <h6 className="footer-title  text-xl mt-5">© 2024 WarmHands All rights reserved.</h6>
       </nav>
     </footer>
   );
