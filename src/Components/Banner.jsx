@@ -10,7 +10,7 @@ import { TypeAnimation } from "react-type-animation";
 
 const Banner = () => {
   return (
-    <div className="rounded-xl">
+    <div className="rounded-xl ">
       <Swiper
         modules={[Navigation]}
         loop={true}

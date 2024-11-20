@@ -35,7 +35,7 @@ const Dashboard = () => {
             <div className="flex flex-col md:flex-row md:gap-5 justify-center items-center space-y-4">
               <div className="relative w-44  md:min-h-40  rounded-full">
                 <img 
-                className="w-full rounded-full object-cover object-center md:absolute -top-20 inset-0 inset-x-auto"
+                className="w-full h-40  rounded-full  object-cover object-center md:absolute -top-20 inset-0 inset-x-auto"
                 src={user.photoURL} alt="Photo" />
               </div>
               <div className="space-y-2">

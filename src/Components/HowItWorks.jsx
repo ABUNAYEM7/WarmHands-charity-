@@ -55,11 +55,12 @@ const HowItWorks = () => {
                     <h3><IoIosArrowDown size={50} className='text-gray-400 '/></h3>
                 </div>
                 <div className='w-full flex justify-end '>
-                   <Link className='btn bg-[#007aff] text-white hover:text-[#007aff]'>Arrange A Collection</Link>
+                   <Link 
+                   to={'/DonateCamp/DonateDetails/1'}
+                   className='btn bg-[#007aff] text-white hover:text-[#007aff]'>Arrange A Collection</Link>
                 </div>
             </div>
       </div>
-                  
         {/* drop-and-pickup */}
     <div>
     <h3 className="text-[#901111] text-5xl font-semibold text-center">Drop And  Pickup<span className='ml-4 text-[#007aff]'>Point</span></h3>

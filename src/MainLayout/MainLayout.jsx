@@ -9,10 +9,10 @@ import Swal from 'sweetalert2'
 const MainLayout = () => {
   return (
     <div className='max-w-screen-2xl mx-auto'>
-      <header>
+      <header className='relative'>
         <Navbar/>
       </header>
-      <main className='min-h-screen'>
+      <main className='min-h-screen mt-20'>
         <Outlet/>
       </main>
       <footer>
