@@ -1,15 +1,14 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { TypeAnimation } from "react-type-animation";
 import { FirebaseContext } from "../FirebaseProvider/FirebaseProvider";
 import Swal from "sweetalert2";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { getStoredEmail } from "../utility/utility";
 
 const ForgetPass = () => {
+  const [email,setEmail] = useState('')
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  const location = useLocation();
-  const userEmail = location.state?.email;
-  const [email, setEmail] = useState(userEmail);
 
   const { resetPassword } = useContext(FirebaseContext);
 
@@ -31,6 +30,11 @@ const ForgetPass = () => {
       })
       .catch((err) => setError(err));
   };
+
+  useEffect(()=>{
+    const userEmail = getStoredEmail()
+    setEmail(userEmail)
+  },[])
 
   return (
     <div className="bg-white rounded-xl md:w-1/2 w-11/12 mx-auto ">
@@ -58,8 +62,8 @@ const ForgetPass = () => {
             </label>
             <input
               name="email"
-              value={userEmail}
-              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+              onChange={(e)=>setEmail(e.target.value)}
               type="email"
               placeholder="email"
               className="input input-bordered"

@@ -1,9 +1,10 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate, useOutletContext } from "react-router-dom";
 import { TypeAnimation } from "react-type-animation";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { FirebaseContext } from "../FirebaseProvider/FirebaseProvider";
 import Swal from "sweetalert2";
+import { setEmailInLs } from "../utility/utility";
 
 const SingIn = () => {
   const [show, setShow] = useState(false);
@@ -20,8 +21,6 @@ const SingIn = () => {
     const form = new FormData(e.target);
     const email = form.get("email");
     const pass = form.get("pass");
-
-    setEmailInput(email)
 
     userSignIn(email, pass)
       .then(() => {
@@ -85,6 +84,15 @@ const SingIn = () => {
     });;
   }
 
+  const handleBlur = (e) => {
+    const email = e.target.value;
+    setEmailInLs(email); 
+  };
+
+  useEffect(()=>{
+    setEmailInLs(emailInput)
+  },[emailInput])
+
   return (
     <div className="bg-white rounded-xl md:w-4/5 w-11/12 mx-auto flex flex-col lg:flex-row justify-between">
       <div className="lg:w-2/3 w-full  mx-auto">
@@ -112,6 +120,7 @@ const SingIn = () => {
             <input
               name="email"
               type="email"
+              onBlur={handleBlur}
               placeholder="email"
               className="input input-bordered"
               required
@@ -134,7 +143,8 @@ const SingIn = () => {
               </Link>
             </div>
             <label className="label">
-              <Link state={{email :emailInput}}  to={'/LogIn/ForgetPass'} className="label-text-alt link link-hover">
+              <Link
+               to={'/LogIn/ForgetPass'} className="label-text-alt link link-hover">
                 Forgot password?
               </Link>
             </label>
